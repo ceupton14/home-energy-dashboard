@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Financial Savings — Upton Home Energy Hub</title>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b1520;--surf:#0f1d2a;--surf2:#162334;--border:#1e3a4a;
+  --teal:#00d4aa;--blue:#3b82f6;--yellow:#f59e0b;--orange:#f97316;
+  --purple:#a855f7;--red:#ef4444;--green:#22c55e;
+  --text:#e2e8f0;--muted:#64748b;--radius:10px;
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:15px;line-height:1.5;min-height:100vh}
+
+/* ── Nav ── */
+nav{background:var(--surf);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;display:flex;flex-direction:column}
+.nav-brand{font-size:.95rem;font-weight:700;color:var(--teal);
+  padding:.65rem 1rem;border-bottom:1px solid var(--border);
+  white-space:nowrap;text-decoration:none;display:block}
+.nav-links{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--muted);text-decoration:none;padding:.7rem 1rem;
+  font-size:.82rem;font-weight:500;white-space:nowrap;flex-shrink:0;
+  border-bottom:2px solid transparent;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--teal);border-bottom-color:var(--teal)}
+
+/* ── Page hero ── */
+.hero{padding:1.4rem 1rem 1rem;max-width:1200px;margin:0 auto}
+.hero h1{font-size:1.4rem;font-weight:700;color:var(--text)}
+.hero p{color:var(--muted);margin-top:.25rem;font-size:.85rem}
+
+/* ── Content wrapper ── */
+.content{max-width:1200px;margin:0 auto;padding:0 1rem 3rem}
+
+/* ── Stat cards ── */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.25rem}
+.card{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem}
+.card-label{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.card-value{font-size:1.6rem;font-weight:700;margin-top:.25rem;line-height:1}
+.card-sub{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+.card.teal .card-value{color:var(--teal)}
+.card.blue .card-value{color:var(--blue)}
+.card.yellow .card-value{color:var(--yellow)}
+.card.orange .card-value{color:var(--orange)}
+.card.purple .card-value{color:var(--purple)}
+.card.red .card-value{color:var(--red)}
+.card.green .card-value{color:var(--green)}
+
+/* ── Chart panels ── */
+.panel{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.1rem;margin-bottom:1.25rem}
+.panel h2{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.85rem}
+.panel-row{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-bottom:1.25rem}
+.chart-wrap{position:relative;height:220px}
+.chart-wrap-tall{position:relative;height:240px}
+
+/* ── Tables ── */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{background:var(--surf2);color:var(--muted);font-weight:600;
+  text-align:right;padding:.5rem .7rem;white-space:nowrap;
+  text-transform:uppercase;font-size:.68rem;letter-spacing:.04em}
+th:first-child{text-align:left}
+td{padding:.45rem .7rem;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+td:first-child{text-align:left;color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.num{font-variant-numeric:tabular-nums}
+.pos{color:var(--green)}
+.neg{color:var(--red)}
+.muted{color:var(--muted)}
+
+/* ── Section title ── */
+.section-title{font-size:.75rem;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.07em;margin:1.5rem 0 .75rem}
+
+/* ── Footer ── */
+footer{text-align:center;color:var(--muted);font-size:.75rem;
+  padding:1.5rem;border-top:1px solid var(--border)}
+
+/* ── Tablet / desktop upgrades ── */
+@media(min-width:600px){
+  .cards{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .card-value{font-size:1.9rem}
+  .chart-wrap{height:260px}
+  .chart-wrap-tall{height:300px}
+  .hero{padding:2rem 1.5rem 1.5rem}
+  .hero h1{font-size:1.7rem}
+  .content{padding:0 1.5rem 3rem}
+}
+@media(min-width:720px){
+  nav{flex-direction:row;align-items:center;padding:0 1.5rem}
+  .nav-brand{padding:1rem 1.5rem 1rem 0;border-bottom:none;
+    border-right:1px solid var(--border)}
+  .panel-row{grid-template-columns:1fr 1fr}
+  .chart-wrap-tall{height:320px}
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">⚡ Upton Home Energy Hub</a>
+  <div class="nav-links"><a href="index.html">Overview</a><a href="solar.html">Solar & Battery</a><a href="ev.html">EV Charging</a><a href="costs.html">Grid & Costs</a><a href="savings.html" class="active">Savings</a></div>
+</nav>
+
+<div class="hero">
+  <h1>Financial Savings</h1>
+  <p>What your energy costs now (ASHP + solar + EV on Octopus Intelligent GO) vs what it would have cost with an oil boiler, petrol car, and standard electricity tariff.</p>
+</div>
+<div class="content">
+  
+<div class="cards">
+  <div class="card red">
+    <div class="card-label">Old World Cost (total)</div>
+    <div class="card-value">£8,074.46</div>
+    <div class="card-sub">oil + petrol + standard electricity</div>
+  </div>
+  <div class="card teal">
+    <div class="card-label">New World Cost (total)</div>
+    <div class="card-value">£2,085.56</div>
+    <div class="card-sub">Octopus bill − export earnings</div>
+  </div>
+  <div class="card green">
+    <div class="card-label">Total Saved</div>
+    <div class="card-value">£5,988.90</div>
+    <div class="card-sub">over 23 months · ahead</div>
+  </div>
+  <div class="card green">
+    <div class="card-label">Monthly Average</div>
+    <div class="card-value">£260.39</div>
+    <div class="card-sub">best: 2024-07 (£357.54)</div>
+  </div>
+</div>
+  <div class="panel-row">
+    <div class="panel">
+      <h2>Monthly Cost — Old World vs New World (£)</h2>
+      <div class="chart-wrap"><canvas id="savCompare"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Cumulative Saving (£)</h2>
+      <div class="chart-wrap"><canvas id="savCumul"></canvas></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>Old World Cost Breakdown (£/month)</h2>
+    <div class="chart-wrap-tall"><canvas id="savBreak"></canvas></div>
+  </div>
+  
+<div class="panel" style="margin-bottom:1.25rem">
+  <h2>Assumptions &amp; Sources</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:.75rem">
+    <div>
+      <div class="card-label" style="margin-bottom:.35rem">Old World — Heating</div>
+      <div style="font-size:.85rem;color:var(--text)">1,700 litres oil/year</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">
+        Priced at ONS RPI series KJ5U ·
+        <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/kj5u/mm23"
+           style="color:var(--teal)" target="_blank">source ↗</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-label" style="margin-bottom:.35rem">Old World — Driving</div>
+      <div style="font-size:.85rem;color:var(--text)">12,500 miles/year · 38 MPG</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">
+        Priced at ONS RPI series CZMK ·
+        <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/czmk/mm23"
+           style="color:var(--teal)" target="_blank">source ↗</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-label" style="margin-bottom:.35rem">Old World — Electricity</div>
+      <div style="font-size:.85rem;color:var(--text)">3,500 kWh/year at Ofgem cap rate</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">
+        Ofgem quarterly price cap ·
+        <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-explained"
+           style="color:var(--teal)" target="_blank">source ↗</a>
+      </div>
+    </div>
+    <div>
+      <div class="card-label" style="margin-bottom:.35rem">New World — Electricity</div>
+      <div style="font-size:.85rem;color:var(--text)">Actual Octopus Intelligent GO bills</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">Covers ASHP + EV charging + all household use</div>
+    </div>
+    <div>
+      <div class="card-label" style="margin-bottom:.35rem">New World — Export Earnings</div>
+      <div style="font-size:.85rem;color:var(--text)">GivEnergy data · 15p/kWh to Feb 2026 · 12p/kWh from Mar 2026</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">Deducted from new-world electricity cost</div>
+    </div>
+    <div>
+      <div class="card-label" style="margin-bottom:.35rem">Data Note</div>
+      <div style="font-size:.85rem;color:var(--text)">Oil &amp; petrol prices marked * are estimated from last ONS value</div>
+      <div style="font-size:.75rem;color:var(--muted);margin-top:.2rem">ONS publishes with ~6–8 week lag · updated automatically each morning</div>
+    </div>
+  </div>
+</div>
+  <p class="section-title">Monthly Detail</p>
+  <div class="panel">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Month</th>
+          <th>Oil</th><th>Petrol</th><th>Old Elec</th><th>Old Total</th>
+          <th>New Elec</th><th>Export</th><th>New Total</th>
+          <th>Saving</th><th>Cumulative</th>
+        </tr></thead>
+        <tbody><tr>
+  <td>2026-05</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£89.69</td>
+  <td class="num"><strong>£352.92</strong></td>
+  <td class="num">£53.98</td>
+  <td class="num">−£6.31</td>
+  <td class="num"><strong>£47.66</strong></td>
+  <td class="num pos"><strong>£305.26</strong></td>
+  <td class="num pos">£5,988.89</td>
+</tr><tr>
+  <td>2026-04</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£89.12</td>
+  <td class="num"><strong>£352.35</strong></td>
+  <td class="num">£3.81</td>
+  <td class="num">−£18.25</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£352.35</strong></td>
+  <td class="num pos">£5,683.63</td>
+</tr><tr>
+  <td>2026-03</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£99.87</td>
+  <td class="num"><strong>£363.10</strong></td>
+  <td class="num">£345.21</td>
+  <td class="num">−£1.82</td>
+  <td class="num"><strong>£343.39</strong></td>
+  <td class="num pos"><strong>£19.72</strong></td>
+  <td class="num pos">£5,331.28</td>
+</tr><tr>
+  <td>2026-02</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£98.02</td>
+  <td class="num"><strong>£361.26</strong></td>
+  <td class="num">£391.99</td>
+  <td class="num">−£0.53</td>
+  <td class="num"><strong>£391.46</strong></td>
+  <td class="num neg"><strong>£-30.21</strong></td>
+  <td class="num pos">£5,311.56</td>
+</tr><tr>
+  <td>2026-01</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£99.87</td>
+  <td class="num"><strong>£363.10</strong></td>
+  <td class="num">£32.07</td>
+  <td class="num">−£6.55</td>
+  <td class="num"><strong>£25.52</strong></td>
+  <td class="num pos"><strong>£337.59</strong></td>
+  <td class="num pos">£5,341.77</td>
+</tr><tr>
+  <td>2025-12</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£95.96</td>
+  <td class="num"><strong>£359.20</strong></td>
+  <td class="num">£48.21</td>
+  <td class="num">−£30.58</td>
+  <td class="num"><strong>£17.63</strong></td>
+  <td class="num pos"><strong>£341.56</strong></td>
+  <td class="num pos">£5,004.18</td>
+</tr><tr>
+  <td>2025-11</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£95.35</td>
+  <td class="num"><strong>£358.58</strong></td>
+  <td class="num">£41.05</td>
+  <td class="num">−£30.54</td>
+  <td class="num"><strong>£10.51</strong></td>
+  <td class="num pos"><strong>£348.07</strong></td>
+  <td class="num pos">£4,662.62</td>
+</tr><tr>
+  <td>2025-10</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£95.96</td>
+  <td class="num"><strong>£359.20</strong></td>
+  <td class="num">£84.72</td>
+  <td class="num">−£32.19</td>
+  <td class="num"><strong>£52.53</strong></td>
+  <td class="num pos"><strong>£306.67</strong></td>
+  <td class="num pos">£4,314.54</td>
+</tr><tr>
+  <td>2025-09</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£80.18</td>
+  <td class="num"><strong>£343.41</strong></td>
+  <td class="num">£56.27</td>
+  <td class="num">−£46.29</td>
+  <td class="num"><strong>£9.98</strong></td>
+  <td class="num pos"><strong>£333.44</strong></td>
+  <td class="num pos">£4,007.88</td>
+</tr><tr>
+  <td>2025-08</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£80.71</td>
+  <td class="num"><strong>£343.95</strong></td>
+  <td class="num">£55.62</td>
+  <td class="num">−£115.08</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£343.95</strong></td>
+  <td class="num pos">£3,674.44</td>
+</tr><tr>
+  <td>2025-07</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£80.71</td>
+  <td class="num"><strong>£343.95</strong></td>
+  <td class="num">£42.91</td>
+  <td class="num">−£66.93</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£343.95</strong></td>
+  <td class="num pos">£3,330.50</td>
+</tr><tr>
+  <td>2025-06</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£85.54</td>
+  <td class="num"><strong>£348.78</strong></td>
+  <td class="num">£45.29</td>
+  <td class="num">−£68.01</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£348.78</strong></td>
+  <td class="num pos">£2,986.55</td>
+</tr><tr>
+  <td>2025-05</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£86.08</td>
+  <td class="num"><strong>£349.31</strong></td>
+  <td class="num">£48.70</td>
+  <td class="num">−£70.37</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£349.31</strong></td>
+  <td class="num pos">£2,637.77</td>
+</tr><tr>
+  <td>2025-04</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£85.54</td>
+  <td class="num"><strong>£348.78</strong></td>
+  <td class="num">£58.02</td>
+  <td class="num">−£25.18</td>
+  <td class="num"><strong>£32.84</strong></td>
+  <td class="num pos"><strong>£315.94</strong></td>
+  <td class="num pos">£2,288.46</td>
+</tr><tr>
+  <td>2025-03</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£88.00</td>
+  <td class="num"><strong>£351.24</strong></td>
+  <td class="num">£121.43</td>
+  <td class="num">−£7.70</td>
+  <td class="num"><strong>£113.73</strong></td>
+  <td class="num pos"><strong>£237.50</strong></td>
+  <td class="num pos">£1,972.52</td>
+</tr><tr>
+  <td>2025-02</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£86.40</td>
+  <td class="num"><strong>£349.64</strong></td>
+  <td class="num">£204.06</td>
+  <td class="num">−£3.31</td>
+  <td class="num"><strong>£200.75</strong></td>
+  <td class="num pos"><strong>£148.89</strong></td>
+  <td class="num pos">£1,735.01</td>
+</tr><tr>
+  <td>2025-01</td>
+  <td class="num">£92.51</td>
+  <td class="num">£170.72</td>
+  <td class="num">£88.00</td>
+  <td class="num"><strong>£351.24</strong></td>
+  <td class="num">£312.52</td>
+  <td class="num">−£1.86</td>
+  <td class="num"><strong>£310.66</strong></td>
+  <td class="num pos"><strong>£40.57</strong></td>
+  <td class="num pos">£1,586.13</td>
+</tr><tr>
+  <td>2024-12</td>
+  <td class="num">£85.32</td>
+  <td class="num">£169.48</td>
+  <td class="num">£90.57</td>
+  <td class="num"><strong>£345.37</strong></td>
+  <td class="num">£227.62</td>
+  <td class="num">−£2.27</td>
+  <td class="num"><strong>£225.35</strong></td>
+  <td class="num pos"><strong>£120.02</strong></td>
+  <td class="num pos">£1,545.55</td>
+</tr><tr>
+  <td>2024-11</td>
+  <td class="num">£83.50</td>
+  <td class="num">£168.23</td>
+  <td class="num">£89.95</td>
+  <td class="num"><strong>£341.68</strong></td>
+  <td class="num">£188.08</td>
+  <td class="num">−£2.65</td>
+  <td class="num"><strong>£185.43</strong></td>
+  <td class="num pos"><strong>£156.25</strong></td>
+  <td class="num pos">£1,425.53</td>
+</tr><tr>
+  <td>2024-10</td>
+  <td class="num">£86.23</td>
+  <td class="num">£166.99</td>
+  <td class="num">£90.57</td>
+  <td class="num"><strong>£343.78</strong></td>
+  <td class="num">£102.66</td>
+  <td class="num">−£3.28</td>
+  <td class="num"><strong>£99.38</strong></td>
+  <td class="num pos"><strong>£244.41</strong></td>
+  <td class="num pos">£1,269.28</td>
+</tr><tr>
+  <td>2024-09</td>
+  <td class="num">£83.46</td>
+  <td class="num">£169.48</td>
+  <td class="num">£83.71</td>
+  <td class="num"><strong>£336.65</strong></td>
+  <td class="num">£40.80</td>
+  <td class="num">−£22.06</td>
+  <td class="num"><strong>£18.74</strong></td>
+  <td class="num pos"><strong>£317.91</strong></td>
+  <td class="num pos">£1,024.88</td>
+</tr><tr>
+  <td>2024-08</td>
+  <td class="num">£86.90</td>
+  <td class="num">£178.20</td>
+  <td class="num">£84.33</td>
+  <td class="num"><strong>£349.43</strong></td>
+  <td class="num">£42.47</td>
+  <td class="num">−£47.12</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£349.43</strong></td>
+  <td class="num pos">£706.97</td>
+</tr><tr>
+  <td>2024-07</td>
+  <td class="num">£93.77</td>
+  <td class="num">£179.45</td>
+  <td class="num">£84.33</td>
+  <td class="num"><strong>£357.54</strong></td>
+  <td class="num">£13.69</td>
+  <td class="num">−£32.17</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£357.54</strong></td>
+  <td class="num pos">£357.54</td>
+</tr></tbody>
+      </table>
+    </div>
+    <p style="color:var(--muted);font-size:.75rem;margin-top:.75rem">* Price estimated from last ONS published value (16 months). Prices refresh automatically each morning.</p>
+  </div>
+</div>
+<footer>Upton Home Energy Hub · Updated 12 May 2026 at 13:53</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script>
+Chart.defaults.color = '#64748b';
+Chart.defaults.borderColor = '#1e3a4a';
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";
+Chart.defaults.font.size = 12;
+const TEAL='#00d4aa',BLUE='#3b82f6',YELLOW='#f59e0b',
+  ORANGE='#f97316',PURPLE='#a855f7',RED='#ef4444',GREEN='#22c55e',
+  MUTED='#64748b',SURF2='#162334';
+function barOpts(stacked){
+  return {responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14,color:'#94a3b8'}},
+             tooltip:{backgroundColor:'#0f1d2a',borderColor:'#1e3a4a',borderWidth:1,
+                      titleColor:'#e2e8f0',bodyColor:'#94a3b8',padding:10}},
+    scales:{x:{stacked:stacked||false,grid:{color:'rgba(255,255,255,.04)'},
+               ticks:{maxRotation:45,color:'#64748b'}},
+            y:{stacked:stacked||false,grid:{color:'rgba(255,255,255,.04)'},
+               ticks:{color:'#64748b'},beginAtZero:true}}};
+}
+function lineOpts(){
+  return {responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14,color:'#94a3b8'}},
+             tooltip:{backgroundColor:'#0f1d2a',borderColor:'#1e3a4a',borderWidth:1,
+                      titleColor:'#e2e8f0',bodyColor:'#94a3b8',padding:10}},
+    scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{maxRotation:45,color:'#64748b'}},
+            y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#64748b'},beginAtZero:true}}};
+}
+</script>
+
+
+<script>
+(function(){
+  const labels=["Jul '24", "Aug '24", "Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26"];
+
+  new Chart(document.getElementById('savCompare'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Old World (oil+petrol+electricity)',data:[357.54, 349.43, 336.65, 343.78, 341.68, 345.37, 351.24, 349.64, 351.24, 348.78, 349.31, 348.78, 343.95, 343.95, 343.41, 359.2, 358.58, 359.2, 363.1, 361.26, 363.1, 352.35, 352.92],backgroundColor:RED+'bb'},
+      {label:'New World (actual bill−export)',data:[0.0, 0.0, 18.74, 99.38, 185.43, 225.35, 310.66, 200.75, 113.73, 32.84, 0.0, 0.0, 0.0, 0.0, 9.98, 52.53, 10.51, 17.63, 25.52, 391.46, 343.39, 0.0, 47.66],backgroundColor:TEAL+'bb'},
+    ]},
+    options:barOpts(false)
+  });
+
+  new Chart(document.getElementById('savCumul'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Monthly Saving',data:[357.54, 349.43, 317.91, 244.41, 156.25, 120.02, 40.57, 148.89, 237.5, 315.94, 349.31, 348.78, 343.95, 343.95, 333.44, 306.67, 348.07, 341.56, 337.59, -30.21, 19.72, 352.35, 305.26],backgroundColor:GREEN+'55',yAxisID:'y'},
+      {label:'Cumulative Saving',data:[357.54, 706.97, 1024.88, 1269.28, 1425.53, 1545.55, 1586.13, 1735.01, 1972.52, 2288.46, 2637.77, 2986.55, 3330.5, 3674.44, 4007.88, 4314.54, 4662.62, 5004.18, 5341.77, 5311.56, 5331.28, 5683.63, 5988.89],type:'line',borderColor:GREEN,
+       backgroundColor:GREEN+'22',fill:false,tension:.3,pointRadius:3,yAxisID:'y1'},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14,color:'#94a3b8'}},
+               tooltip:{backgroundColor:'#0f1d2a',borderColor:'#1e3a4a',borderWidth:1,
+                        titleColor:'#e2e8f0',bodyColor:'#94a3b8',padding:10}},
+      scales:{
+        x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{maxRotation:45,color:'#64748b'}},
+        y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#64748b'},beginAtZero:false,
+           position:'left',title:{display:true,text:'Monthly (£)',color:'#64748b'}},
+        y1:{grid:{drawOnChartArea:false},ticks:{color:'#64748b'},
+             position:'right',title:{display:true,text:'Cumulative (£)',color:'#64748b'}}
+      }
+    }
+  });
+
+  new Chart(document.getElementById('savBreak'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Oil (heating)',data:[93.77, 86.9, 83.46, 86.23, 83.5, 85.32, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51],backgroundColor:ORANGE+'cc',stack:'old'},
+      {label:'Petrol (driving)',data:[179.45, 178.2, 169.48, 166.99, 168.23, 169.48, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72],backgroundColor:RED+'cc',stack:'old'},
+      {label:'Electricity (standard tariff)',data:[84.33, 84.33, 83.71, 90.57, 89.95, 90.57, 88.0, 86.4, 88.0, 85.54, 86.08, 85.54, 80.71, 80.71, 80.18, 95.96, 95.35, 95.96, 99.87, 98.02, 99.87, 89.12, 89.69],backgroundColor:YELLOW+'99',stack:'old'},
+    ]},
+    options:barOpts(true)
+  });
+})();
+</script>
+</body>
+</html>

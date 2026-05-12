@@ -104,41 +104,6 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-
-<script>
-(function(){
-  const labels=["Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26"];
-  new Chart(document.getElementById('ovEnergy'),{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'Solar Generated',data:[527.1, 635.2, 688.4, 526.8, 231.6, 204.1, 156.0, 92.5, 175.3, 415.9, 690.4, 238.9],backgroundColor:YELLOW+'cc',stack:'a'},
-      {label:'Battery Discharged',data:[198.9, 513.4, 752.5, 661.0, 725.7, 574.9, 629.1, 414.6, 393.1, 519.3, 499.2, 134.7],backgroundColor:PURPLE+'cc',stack:'a'},
-      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 146.9],backgroundColor:RED+'aa',stack:'b'},
-    ]},
-    options:barOpts(true)
-  });
-
-  const octLabels=["Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Apr '26"];
-  new Chart(document.getElementById('ovCost'),{
-    type:'bar',
-    data:{labels:octLabels,datasets:[
-      {label:'Off-Peak Cost',data:[54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 3.55],backgroundColor:TEAL+'cc',stack:'cost'},
-      {label:'On-Peak Cost',data:[66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.26],backgroundColor:ORANGE+'cc',stack:'cost'},
-    ]},
-    options:barOpts(true)
-  });
-
-  new Chart(document.getElementById('ovBalance'),{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 146.9],backgroundColor:RED+'aa'},
-      {label:'Grid Export',data:[453.4, 446.2, 767.2, 308.6, 214.6, 203.6, 203.9, 43.7, 3.5, 15.2, 152.1, 52.6],backgroundColor:TEAL+'aa'},
-    ]},
-    options:barOpts(false)
-  });
-})();
-</script>
 </head>
 <body>
 
@@ -299,7 +264,8 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
     </div>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 12 May 2026 at 11:49</footer>
+<footer>Upton Home Energy Hub · Updated 12 May 2026 at 12:06</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
 Chart.defaults.color = '#64748b';
@@ -329,5 +295,39 @@ function lineOpts(){
 }
 </script>
 
+
+<script>
+(function(){
+  const labels=["Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26"];
+  new Chart(document.getElementById('ovEnergy'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Solar Generated',data:[527.1, 635.2, 688.4, 526.8, 231.6, 204.1, 156.0, 92.5, 175.3, 415.9, 690.4, 238.9],backgroundColor:YELLOW+'cc',stack:'a'},
+      {label:'Battery Discharged',data:[198.9, 513.4, 752.5, 661.0, 725.7, 574.9, 629.1, 414.6, 393.1, 519.3, 499.2, 134.7],backgroundColor:PURPLE+'cc',stack:'a'},
+      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 146.9],backgroundColor:RED+'aa',stack:'b'},
+    ]},
+    options:barOpts(true)
+  });
+
+  const octLabels=["Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Apr '26"];
+  new Chart(document.getElementById('ovCost'),{
+    type:'bar',
+    data:{labels:octLabels,datasets:[
+      {label:'Off-Peak Cost',data:[54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 3.55],backgroundColor:TEAL+'cc',stack:'cost'},
+      {label:'On-Peak Cost',data:[66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.26],backgroundColor:ORANGE+'cc',stack:'cost'},
+    ]},
+    options:barOpts(true)
+  });
+
+  new Chart(document.getElementById('ovBalance'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 146.9],backgroundColor:RED+'aa'},
+      {label:'Grid Export',data:[453.4, 446.2, 767.2, 308.6, 214.6, 203.6, 203.9, 43.7, 3.5, 15.2, 152.1, 52.6],backgroundColor:TEAL+'aa'},
+    ]},
+    options:barOpts(false)
+  });
+})();
+</script>
 </body>
 </html>

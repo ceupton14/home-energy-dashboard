@@ -104,29 +104,6 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-
-<script>
-(function(){
-  const labels=["Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Apr '26"];
-  new Chart(document.getElementById('costGbp'),{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'Off-Peak (6.667p)',data:[33.71, 47.38, 57.89, 59.38, 65.52, 47.68, 54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 3.55],backgroundColor:TEAL+'cc',stack:'cost'},
-      {label:'On-Peak',data:[7.09, 55.28, 130.19, 168.24, 247.0, 156.38, 66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.26],backgroundColor:ORANGE+'cc',stack:'cost'},
-    ]},
-    options:barOpts(true)
-  });
-  new Chart(document.getElementById('costKwh'),{
-    type:'bar',
-    data:{labels,datasets:[
-      {label:'Off-Peak kWh',data:[505.6, 710.6, 868.2, 890.7, 982.7, 715.1, 818.5, 663.2, 570.9, 301.8, 463.6, 736.9, 751.5, 716.6, 405.5, 189.4, 54.0, 53.3],backgroundColor:TEAL+'cc',stack:'kwh'},
-      {label:'On-Peak kWh',data:[28.9, 207.5, 488.7, 631.5, 927.2, 587.0, 251.0, 50.4, 38.8, 91.8, 47.6, 25.8, 24.5, 134.7, 51.1, 129.8, 111.1, 0.9],backgroundColor:ORANGE+'cc',stack:'kwh'},
-    ]},
-    options:barOpts(true)
-  });
-})();
-</script>
 </head>
 <body>
 
@@ -348,7 +325,8 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
     </div>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 12 May 2026 at 11:49</footer>
+<footer>Upton Home Energy Hub · Updated 12 May 2026 at 12:06</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
 Chart.defaults.color = '#64748b';
@@ -378,5 +356,27 @@ function lineOpts(){
 }
 </script>
 
+
+<script>
+(function(){
+  const labels=["Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Apr '26"];
+  new Chart(document.getElementById('costGbp'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Off-Peak (6.667p)',data:[33.71, 47.38, 57.89, 59.38, 65.52, 47.68, 54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 3.55],backgroundColor:TEAL+'cc',stack:'cost'},
+      {label:'On-Peak',data:[7.09, 55.28, 130.19, 168.24, 247.0, 156.38, 66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.26],backgroundColor:ORANGE+'cc',stack:'cost'},
+    ]},
+    options:barOpts(true)
+  });
+  new Chart(document.getElementById('costKwh'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Off-Peak kWh',data:[505.6, 710.6, 868.2, 890.7, 982.7, 715.1, 818.5, 663.2, 570.9, 301.8, 463.6, 736.9, 751.5, 716.6, 405.5, 189.4, 54.0, 53.3],backgroundColor:TEAL+'cc',stack:'kwh'},
+      {label:'On-Peak kWh',data:[28.9, 207.5, 488.7, 631.5, 927.2, 587.0, 251.0, 50.4, 38.8, 91.8, 47.6, 25.8, 24.5, 134.7, 51.1, 129.8, 111.1, 0.9],backgroundColor:ORANGE+'cc',stack:'kwh'},
+    ]},
+    options:barOpts(true)
+  });
+})();
+</script>
 </body>
 </html>

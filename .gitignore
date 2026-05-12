@@ -1,0 +1,12 @@
+# ── Whitelist approach ─────────────────────────────────────────────────────────
+# Ignore everything by default, then un-ignore only what GitHub Pages needs.
+# This prevents credentials, raw data, and scripts from ever being published.
+*
+
+# Allow the docs/ folder (GitHub Pages source)
+!docs/
+!docs/*.html
+!docs/.nojekyll
+
+# Allow this file
+!.gitignore

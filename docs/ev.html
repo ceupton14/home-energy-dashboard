@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EV Charging — Upton Home Energy Hub</title>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b1520;--surf:#0f1d2a;--surf2:#162334;--border:#1e3a4a;
+  --teal:#00d4aa;--blue:#3b82f6;--yellow:#f59e0b;--orange:#f97316;
+  --purple:#a855f7;--red:#ef4444;--green:#22c55e;
+  --text:#e2e8f0;--muted:#64748b;--radius:10px;
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:15px;line-height:1.5;min-height:100vh}
+
+/* ── Nav ── */
+nav{background:var(--surf);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;display:flex;flex-direction:column}
+.nav-brand{font-size:.95rem;font-weight:700;color:var(--teal);
+  padding:.65rem 1rem;border-bottom:1px solid var(--border);
+  white-space:nowrap;text-decoration:none;display:block}
+.nav-links{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{color:var(--muted);text-decoration:none;padding:.7rem 1rem;
+  font-size:.82rem;font-weight:500;white-space:nowrap;flex-shrink:0;
+  border-bottom:2px solid transparent;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-links a.active{color:var(--teal);border-bottom-color:var(--teal)}
+
+/* ── Page hero ── */
+.hero{padding:1.4rem 1rem 1rem;max-width:1200px;margin:0 auto}
+.hero h1{font-size:1.4rem;font-weight:700;color:var(--text)}
+.hero p{color:var(--muted);margin-top:.25rem;font-size:.85rem}
+
+/* ── Content wrapper ── */
+.content{max-width:1200px;margin:0 auto;padding:0 1rem 3rem}
+
+/* ── Stat cards ── */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.25rem}
+.card{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem}
+.card-label{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.card-value{font-size:1.6rem;font-weight:700;margin-top:.25rem;line-height:1}
+.card-sub{font-size:.75rem;color:var(--muted);margin-top:.3rem}
+.card.teal .card-value{color:var(--teal)}
+.card.blue .card-value{color:var(--blue)}
+.card.yellow .card-value{color:var(--yellow)}
+.card.orange .card-value{color:var(--orange)}
+.card.purple .card-value{color:var(--purple)}
+.card.red .card-value{color:var(--red)}
+.card.green .card-value{color:var(--green)}
+
+/* ── Chart panels ── */
+.panel{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.1rem;margin-bottom:1.25rem}
+.panel h2{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.85rem}
+.panel-row{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-bottom:1.25rem}
+.chart-wrap{position:relative;height:220px}
+.chart-wrap-tall{position:relative;height:240px}
+
+/* ── Tables ── */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:.5rem}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{background:var(--surf2);color:var(--muted);font-weight:600;
+  text-align:right;padding:.5rem .7rem;white-space:nowrap;
+  text-transform:uppercase;font-size:.68rem;letter-spacing:.04em}
+th:first-child{text-align:left}
+td{padding:.45rem .7rem;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+td:first-child{text-align:left;color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.02)}
+.num{font-variant-numeric:tabular-nums}
+.pos{color:var(--green)}
+.neg{color:var(--red)}
+.muted{color:var(--muted)}
+
+/* ── Section title ── */
+.section-title{font-size:.75rem;font-weight:700;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.07em;margin:1.5rem 0 .75rem}
+
+/* ── Footer ── */
+footer{text-align:center;color:var(--muted);font-size:.75rem;
+  padding:1.5rem;border-top:1px solid var(--border)}
+
+/* ── Tablet / desktop upgrades ── */
+@media(min-width:600px){
+  .cards{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .card-value{font-size:1.9rem}
+  .chart-wrap{height:260px}
+  .chart-wrap-tall{height:300px}
+  .hero{padding:2rem 1.5rem 1.5rem}
+  .hero h1{font-size:1.7rem}
+  .content{padding:0 1.5rem 3rem}
+}
+@media(min-width:720px){
+  nav{flex-direction:row;align-items:center;padding:0 1.5rem}
+  .nav-brand{padding:1rem 1.5rem 1rem 0;border-bottom:none;
+    border-right:1px solid var(--border)}
+  .panel-row{grid-template-columns:1fr 1fr}
+  .chart-wrap-tall{height:320px}
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">⚡ Upton Home Energy Hub</a>
+  <div class="nav-links"><a href="index.html">Overview</a><a href="solar.html">Solar & Battery</a><a href="ev.html" class="active">EV Charging</a><a href="costs.html">Grid & Costs</a></div>
+</nav>
+<div class="hero"><h1>EV Charging</h1>
+<p>No EV session data found. Run ev_download.py to fetch data.</p></div>
+<footer>Upton Home Energy Hub · Updated 12 May 2026 at 11:49</footer>
+
+<script>
+Chart.defaults.color = '#64748b';
+Chart.defaults.borderColor = '#1e3a4a';
+Chart.defaults.font.family = "-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif";
+Chart.defaults.font.size = 12;
+const TEAL='#00d4aa',BLUE='#3b82f6',YELLOW='#f59e0b',
+  ORANGE='#f97316',PURPLE='#a855f7',RED='#ef4444',GREEN='#22c55e',
+  MUTED='#64748b',SURF2='#162334';
+function barOpts(stacked){
+  return {responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14,color:'#94a3b8'}},
+             tooltip:{backgroundColor:'#0f1d2a',borderColor:'#1e3a4a',borderWidth:1,
+                      titleColor:'#e2e8f0',bodyColor:'#94a3b8',padding:10}},
+    scales:{x:{stacked:stacked||false,grid:{color:'rgba(255,255,255,.04)'},
+               ticks:{maxRotation:45,color:'#64748b'}},
+            y:{stacked:stacked||false,grid:{color:'rgba(255,255,255,.04)'},
+               ticks:{color:'#64748b'},beginAtZero:true}}};
+}
+function lineOpts(){
+  return {responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:14,color:'#94a3b8'}},
+             tooltip:{backgroundColor:'#0f1d2a',borderColor:'#1e3a4a',borderWidth:1,
+                      titleColor:'#e2e8f0',bodyColor:'#94a3b8',padding:10}},
+    scales:{x:{grid:{color:'rgba(255,255,255,.04)'},ticks:{maxRotation:45,color:'#64748b'}},
+            y:{grid:{color:'rgba(255,255,255,.04)'},ticks:{color:'#64748b'},beginAtZero:true}}};
+}
+</script>
+
+</body>
+</html>

@@ -111,9 +111,480 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <a class="nav-brand" href="index.html">⚡ Upton Home Energy Hub</a>
   <div class="nav-links"><a href="index.html">Overview</a><a href="solar.html">Solar & Battery</a><a href="ev.html" class="active">EV Charging</a><a href="costs.html">Grid & Costs</a></div>
 </nav>
-<div class="hero"><h1>EV Charging</h1>
-<p>No EV session data found. Run ev_download.py to fetch data.</p></div>
-<footer>Upton Home Energy Hub · Updated 12 May 2026 at 12:06</footer>
+
+<div class="hero">
+  <h1>EV Charging</h1>
+  <p>Charging sessions detected from GivEnergy EV charger · costed at Octopus Intelligent GO per-slot rates.</p>
+</div>
+<div class="content">
+  
+<div class="cards">
+  <div class="card blue">
+    <div class="card-label">Total Sessions</div>
+    <div class="card-value">320</div>
+    <div class="card-sub">charging events detected</div>
+  </div>
+  <div class="card teal">
+    <div class="card-label">Total Energy</div>
+    <div class="card-value">5,240</div>
+    <div class="card-sub">kWh delivered</div>
+  </div>
+  <div class="card orange">
+    <div class="card-label">Total Cost</div>
+    <div class="card-value">£472.89</div>
+    <div class="card-sub">avg 9.0p/kWh blended</div>
+  </div>
+  <div class="card purple">
+    <div class="card-label">Off-Peak Charging</div>
+    <div class="card-value">88%</div>
+    <div class="card-sub">of energy at cheap rate</div>
+  </div>
+</div>
+  
+<div class="panel-row">
+  <div class="panel" style="border-top:3px solid #3b82f6">
+    <h2>BMW i3 <span style="color:var(--muted);font-weight:400;font-size:.85rem">(pre Oct 2025)</span></h2>
+    <div class="cards" style="margin-bottom:0">
+      <div class="card blue"><div class="card-label">Sessions</div><div class="card-value" style="font-size:1.4rem">192</div></div>
+      <div class="card blue"><div class="card-label">Total kWh</div><div class="card-value" style="font-size:1.4rem">2870</div></div>
+      <div class="card blue"><div class="card-label">Total Cost</div><div class="card-value" style="font-size:1.4rem">£254.44</div></div>
+      <div class="card blue"><div class="card-label">Avg/Session</div><div class="card-value" style="font-size:1.4rem">14.9 kWh</div></div>
+    </div>
+  </div>
+  <div class="panel" style="border-top:3px solid #a855f7">
+    <h2>Volvo XC40 <span style="color:var(--muted);font-weight:400;font-size:.85rem">(Oct 2025+)</span></h2>
+    <div class="cards" style="margin-bottom:0">
+      <div class="card purple"><div class="card-label">Sessions</div><div class="card-value" style="font-size:1.4rem">128</div></div>
+      <div class="card purple"><div class="card-label">Total kWh</div><div class="card-value" style="font-size:1.4rem">2370</div></div>
+      <div class="card purple"><div class="card-label">Total Cost</div><div class="card-value" style="font-size:1.4rem">£218.45</div></div>
+      <div class="card purple"><div class="card-label">Avg/Session</div><div class="card-value" style="font-size:1.4rem">18.5 kWh</div></div>
+    </div>
+  </div>
+</div>
+  <div class="panel-row">
+    <div class="panel">
+      <h2>Monthly Energy Charged (kWh)</h2>
+      <div class="chart-wrap"><canvas id="evKwh"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Monthly Charging Cost (£)</h2>
+      <div class="chart-wrap"><canvas id="evCost"></canvas></div>
+    </div>
+  </div>
+  <p class="section-title">Recent Sessions (last 50)</p>
+  <div class="panel">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th>Date</th><th>Time</th><th>Car</th><th>kWh</th><th>Cost</th>
+          <th>Off-Peak%</th><th>Rate</th>
+        </tr></thead>
+        <tbody><tr>
+  <td>06 May 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">35.76</td>
+  <td class="num">£2.38</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>27 Apr 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">25.16</td>
+  <td class="num">£1.68</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>24 Apr 2026</td>
+  <td>23:31</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">23.10</td>
+  <td class="num">£1.54</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>19 Apr 2026</td>
+  <td>23:34</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">32.24</td>
+  <td class="num">£2.15</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>16 Apr 2026</td>
+  <td>15:25</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.35</td>
+  <td class="num">£0.10</td>
+  <td class="num">0%</td>
+  <td class="num">28.1p</td>
+</tr><tr>
+  <td>16 Apr 2026</td>
+  <td>11:26</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.23</td>
+  <td class="num">£0.06</td>
+  <td class="num">0%</td>
+  <td class="num">28.1p</td>
+</tr><tr>
+  <td>15 Apr 2026</td>
+  <td>23:34</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">40.03</td>
+  <td class="num">£2.67</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>12 Apr 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">32.15</td>
+  <td class="num">£2.14</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>09 Apr 2026</td>
+  <td>07:53</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">8.99</td>
+  <td class="num">£2.52</td>
+  <td class="num">0%</td>
+  <td class="num">28.1p</td>
+</tr><tr>
+  <td>09 Apr 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">40.60</td>
+  <td class="num">£2.71</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>08 Apr 2026</td>
+  <td>23:38</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">9.05</td>
+  <td class="num">£0.60</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>04 Apr 2026</td>
+  <td>12:03</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">3.67</td>
+  <td class="num">£1.03</td>
+  <td class="num">0%</td>
+  <td class="num">28.1p</td>
+</tr><tr>
+  <td>03 Apr 2026</td>
+  <td>23:43</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">45.23</td>
+  <td class="num">£4.30</td>
+  <td class="num">87%</td>
+  <td class="num">9.5p</td>
+</tr><tr>
+  <td>02 Apr 2026</td>
+  <td>23:04</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">69.88</td>
+  <td class="num">£10.89</td>
+  <td class="num">58%</td>
+  <td class="num">15.6p</td>
+</tr><tr>
+  <td>02 Apr 2026</td>
+  <td>08:46</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.42</td>
+  <td class="num">£0.12</td>
+  <td class="num">0%</td>
+  <td class="num">28.1p</td>
+</tr><tr>
+  <td>02 Apr 2026</td>
+  <td>08:34</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.05</td>
+  <td class="num">£0.01</td>
+  <td class="num">0%</td>
+  <td class="num">28.1p</td>
+</tr><tr>
+  <td>01 Apr 2026</td>
+  <td>21:33</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">57.24</td>
+  <td class="num">£7.36</td>
+  <td class="num">71%</td>
+  <td class="num">12.9p</td>
+</tr><tr>
+  <td>30 Mar 2026</td>
+  <td>07:29</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.73</td>
+  <td class="num">£0.19</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>30 Mar 2026</td>
+  <td>08:59</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">10.34</td>
+  <td class="num">£2.65</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>29 Mar 2026</td>
+  <td>23:54</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">37.78</td>
+  <td class="num">£2.52</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>28 Mar 2026</td>
+  <td>08:38</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.93</td>
+  <td class="num">£0.24</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>28 Mar 2026</td>
+  <td>07:11</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.06</td>
+  <td class="num">£0.02</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>27 Mar 2026</td>
+  <td>21:34</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">42.18</td>
+  <td class="num">£5.30</td>
+  <td class="num">69%</td>
+  <td class="num">12.6p</td>
+</tr><tr>
+  <td>27 Mar 2026</td>
+  <td>18:06</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.08</td>
+  <td class="num">£0.02</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>21 Mar 2026</td>
+  <td>23:35</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">23.61</td>
+  <td class="num">£1.57</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>20 Mar 2026</td>
+  <td>23:05</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">41.10</td>
+  <td class="num">£2.80</td>
+  <td class="num">99%</td>
+  <td class="num">6.8p</td>
+</tr><tr>
+  <td>14 Mar 2026</td>
+  <td>03:19</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.14</td>
+  <td class="num">£0.01</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>14 Mar 2026</td>
+  <td>19:17</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">64.56</td>
+  <td class="num">£9.84</td>
+  <td class="num">55%</td>
+  <td class="num">15.2p</td>
+</tr><tr>
+  <td>13 Mar 2026</td>
+  <td>23:31</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">16.43</td>
+  <td class="num">£1.10</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>13 Mar 2026</td>
+  <td>06:29</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.74</td>
+  <td class="num">£0.19</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>12 Mar 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">40.76</td>
+  <td class="num">£2.72</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>09 Mar 2026</td>
+  <td>06:31</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.53</td>
+  <td class="num">£0.14</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>08 Mar 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">40.54</td>
+  <td class="num">£2.70</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>08 Mar 2026</td>
+  <td>11:03</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.34</td>
+  <td class="num">£0.09</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>07 Mar 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">40.35</td>
+  <td class="num">£2.70</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>07 Mar 2026</td>
+  <td>08:07</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">1.84</td>
+  <td class="num">£0.47</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>06 Mar 2026</td>
+  <td>19:09</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.09</td>
+  <td class="num">£0.02</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>06 Mar 2026</td>
+  <td>18:32</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.26</td>
+  <td class="num">£0.07</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>06 Mar 2026</td>
+  <td>23:34</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">39.68</td>
+  <td class="num">£2.65</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>01 Mar 2026</td>
+  <td>04:21</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.10</td>
+  <td class="num">£0.01</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>28 Feb 2026</td>
+  <td>23:33</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">19.61</td>
+  <td class="num">£1.31</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>28 Feb 2026</td>
+  <td>21:42</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.35</td>
+  <td class="num">£0.09</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>28 Feb 2026</td>
+  <td>01:08</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.31</td>
+  <td class="num">£0.02</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>27 Feb 2026</td>
+  <td>15:21</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.24</td>
+  <td class="num">£0.06</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>27 Feb 2026</td>
+  <td>05:19</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.21</td>
+  <td class="num">£0.03</td>
+  <td class="num">73%</td>
+  <td class="num">11.7p</td>
+</tr><tr>
+  <td>26 Feb 2026</td>
+  <td>19:35</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.32</td>
+  <td class="num">£0.08</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>26 Feb 2026</td>
+  <td>08:12</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.60</td>
+  <td class="num">£0.15</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>25 Feb 2026</td>
+  <td>23:30</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">38.28</td>
+  <td class="num">£2.55</td>
+  <td class="num">100%</td>
+  <td class="num">6.7p</td>
+</tr><tr>
+  <td>25 Feb 2026</td>
+  <td>20:36</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.33</td>
+  <td class="num">£0.08</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr><tr>
+  <td>25 Feb 2026</td>
+  <td>16:32</td>
+  <td style="color:var(--purple)">Volvo XC40</td>
+  <td class="num">0.30</td>
+  <td class="num">£0.08</td>
+  <td class="num">0%</td>
+  <td class="num">25.6p</td>
+</tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<footer>Upton Home Energy Hub · Updated 12 May 2026 at 13:17</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
@@ -145,5 +616,20 @@ function lineOpts(){
 </script>
 
 
+<script>
+(function(){
+  const labels=["Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26"];
+  new Chart(document.getElementById('evKwh'),{
+    type:'bar',
+    data:{labels,datasets:[{label:'kWh Charged',data:[335.3, 237.3, 108.5, 199.7, 201.4, 279.7, 150.8, 169.4, 132.4, 125.5, 164.1, 250.4, 476.5, 326.4, 325.5, 403.2, 388.4, 35.8],backgroundColor:BLUE+'cc'}]},
+    options:barOpts()
+  });
+  new Chart(document.getElementById('evCost'),{
+    type:'bar',
+    data:{labels,datasets:[{label:'Cost £',data:[34.35, 16.31, 9.86, 20.91, 17.2, 21.71, 18.55, 12.36, 13.58, 9.61, 10.94, 17.35, 40.91, 37.33, 31.66, 38.0, 39.89, 2.38],backgroundColor:ORANGE+'cc'}]},
+    options:barOpts()
+  });
+})();
+</script>
 </body>
 </html>

@@ -204,7 +204,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 <div class="cards">
   <div class="card purple">
     <div class="card-label">Peak Demand Avoided</div>
-    <div class="card-value">8,841</div>
+    <div class="card-value">8,842</div>
     <div class="card-sub">kWh discharged to home vs paying 28.09p on-peak</div>
   </div>
   <div class="card blue">
@@ -214,7 +214,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
   <div class="card green">
     <div class="card-label">Net Arbitrage Value</div>
-    <div class="card-value">£1,869.18</div>
+    <div class="card-value">£1,869.35</div>
     <div class="card-sub">value of discharge − cost to charge from grid</div>
   </div>
 </div>
@@ -371,7 +371,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <td class="num">538.3</td>
   <td class="num">79%</td>
   <td class="num">542.7</td>
-  <td class="num">499.2</td>
+  <td class="num">499.8</td>
 </tr><tr>
   <td>2026-05</td>
   <td class="num">238.9</td>
@@ -385,7 +385,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
     </div>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 13 May 2026 at 13:57</footer>
+<footer>Upton Home Energy Hub · Updated 13 May 2026 at 15:55</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
@@ -603,7 +603,7 @@ function drawHeatmap(containerId, dataObj, colorHex) {
     type:'bar',
     data:{labels,datasets:[
       {label:'Charged',data:[415.2, 464.1, 436.7, 660.4, 839.3, 319.4, 167.8, 480.7, 728.5, 769.6, 752.4, 598.4, 658.2, 454.4, 440.2, 563.6, 542.7, 142.1],backgroundColor:PURPLE+'99'},
-      {label:'Discharged',data:[413.5, 450.0, 418.8, 636.0, 631.8, 349.5, 198.9, 513.4, 752.5, 661.0, 725.7, 574.9, 629.1, 414.6, 393.1, 519.3, 499.2, 134.7],backgroundColor:BLUE+'99'},
+      {label:'Discharged',data:[413.5, 450.0, 418.8, 636.0, 631.8, 349.5, 198.9, 513.4, 752.5, 661.0, 725.7, 574.9, 629.1, 414.6, 393.1, 519.3, 499.8, 134.7],backgroundColor:BLUE+'99'},
     ]},
     options:barOpts(false)
   });
@@ -611,7 +611,7 @@ function drawHeatmap(containerId, dataObj, colorHex) {
   mkChart('solArb',{
     type:'bar',
     data:{labels:["Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26"],datasets:[
-      {label:'Discharge Value (avoided 28.09p on-peak)',data:[112.18, 123.4, 113.3, 171.68, 160.66, 67.06, 27.34, 89.91, 103.28, 119.4, 144.43, 104.47, 119.47, 104.39, 109.79, 145.0, 138.8, 37.31],backgroundColor:GREEN+'cc'},
+      {label:'Discharge Value (avoided 28.09p on-peak)',data:[112.18, 123.4, 113.3, 171.68, 160.66, 67.06, 27.34, 89.91, 103.28, 119.4, 144.43, 104.47, 119.47, 104.39, 109.79, 145.0, 138.97, 37.31],backgroundColor:GREEN+'cc'},
       {label:'Grid Charge Cost (6.67p off-peak)',data:[27.51, 30.72, 29.03, 44.03, 30.45, 13.94, 7.02, 16.4, 39.0, 38.06, 43.48, 36.94, 42.87, 29.13, 25.59, 25.8, 23.02, 6.11],backgroundColor:PURPLE+'99'},
     ]},
     options:barOpts(false)

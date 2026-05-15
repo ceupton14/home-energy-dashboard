@@ -158,12 +158,12 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 <div class="cards">
   <div class="card red">
     <div class="card-label">Total Imported</div>
-    <div class="card-value">14,858</div>
+    <div class="card-value">14,912</div>
     <div class="card-sub">kWh from grid</div>
   </div>
   <div class="card orange">
     <div class="card-label">Total Spend</div>
-    <div class="card-value">£1,770.00</div>
+    <div class="card-value">£1,773.82</div>
     <div class="card-sub">avg 11.9p/kWh blended</div>
   </div>
   <div class="card teal">
@@ -173,8 +173,8 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
   <div class="card green">
     <div class="card-label">Export Earnings</div>
-    <div class="card-value">£582.90</div>
-    <div class="card-sub">~4,318 kWh exported</div>
+    <div class="card-value">£585.65</div>
+    <div class="card-sub">~4,338 kWh exported</div>
   </div>
 </div>
   <div class="panel-row">
@@ -350,19 +350,19 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <td class="num muted">6%</td>
 </tr><tr>
   <td>2026-04</td>
-  <td class="num">54.2</td>
-  <td class="num">53.3</td>
-  <td class="num">0.9</td>
+  <td class="num">108.4</td>
+  <td class="num">106.6</td>
+  <td class="num">1.9</td>
   <td class="num heat-hi">98%</td>
-  <td class="num">£3.81</td>
+  <td class="num">£7.63</td>
   <td class="num">7.0p</td>
-  <td class="num muted">16%</td>
+  <td class="num muted">20%</td>
 </tr></tbody>
       </table>
     </div>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 13 May 2026 at 15:55</footer>
+<footer>Upton Home Energy Hub · Updated 15 May 2026 at 08:10</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
@@ -458,16 +458,16 @@ function mkChart(id,cfg){
   new Chart(document.getElementById('costGbp'),{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Off-Peak (6.667p)',data:[33.71, 47.38, 57.89, 59.38, 65.52, 47.68, 54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 3.55],backgroundColor:TEAL+'cc',stack:'cost'},
-      {label:'On-Peak',data:[7.09, 55.28, 130.19, 168.24, 247.0, 156.38, 66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.26],backgroundColor:ORANGE+'cc',stack:'cost'},
+      {label:'Off-Peak (6.667p)',data:[33.71, 47.38, 57.89, 59.38, 65.52, 47.68, 54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 7.1],backgroundColor:TEAL+'cc',stack:'cost'},
+      {label:'On-Peak',data:[7.09, 55.28, 130.19, 168.24, 247.0, 156.38, 66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.53],backgroundColor:ORANGE+'cc',stack:'cost'},
     ]},
     options:barOpts(true)
   });
   new Chart(document.getElementById('costKwh'),{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Off-Peak kWh',data:[505.6, 710.6, 868.2, 890.7, 982.7, 715.1, 818.5, 663.2, 570.9, 301.8, 463.6, 736.9, 751.5, 716.6, 405.5, 189.4, 54.0, 53.3],backgroundColor:TEAL+'cc',stack:'kwh'},
-      {label:'On-Peak kWh',data:[28.9, 207.5, 488.7, 631.5, 927.2, 587.0, 251.0, 50.4, 38.8, 91.8, 47.6, 25.8, 24.5, 134.7, 51.1, 129.8, 111.1, 0.9],backgroundColor:ORANGE+'cc',stack:'kwh'},
+      {label:'Off-Peak kWh',data:[505.6, 710.6, 868.2, 890.7, 982.7, 715.1, 818.5, 663.2, 570.9, 301.8, 463.6, 736.9, 751.5, 716.6, 405.5, 189.4, 54.0, 106.6],backgroundColor:TEAL+'cc',stack:'kwh'},
+      {label:'On-Peak kWh',data:[28.9, 207.5, 488.7, 631.5, 927.2, 587.0, 251.0, 50.4, 38.8, 91.8, 47.6, 25.8, 24.5, 134.7, 51.1, 129.8, 111.1, 1.9],backgroundColor:ORANGE+'cc',stack:'kwh'},
     ]},
     options:barOpts(true)
   });

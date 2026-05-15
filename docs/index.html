@@ -158,9 +158,9 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 <div class="cards">
   <div class="card yellow">
     <div class="card-label">Total Solar Generated</div>
-    <div class="card-value">8,930</div>
+    <div class="card-value">9,015</div>
     <div class="card-sub">kWh since system install</div>
-    <div class="card-trend down">↓ 65% vs prev month</div>
+    <div class="card-trend down">↓ 53% vs prev month</div>
   </div>
   <div class="card teal">
     <div class="card-label">Self-Consumption Rate</div>
@@ -170,15 +170,15 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
   <div class="card red">
     <div class="card-label">Total Grid Import</div>
-    <div class="card-value">22,897</div>
-    <div class="card-sub">kWh · £1,770.00 spend</div>
-    <div class="card-trend up">↓ 83% vs prev month</div>
+    <div class="card-value">22,990</div>
+    <div class="card-sub">kWh · £1,773.82 spend</div>
+    <div class="card-trend up">↓ 72% vs prev month</div>
   </div>
   <div class="card blue">
     <div class="card-label">EV Charging (all-time)</div>
-    <div class="card-value">5,240</div>
-    <div class="card-sub">kWh · 320 sessions</div>
-    <div class="card-trend down">↓ 91% vs prev month</div>
+    <div class="card-value">5,270</div>
+    <div class="card-sub">kWh · 321 sessions</div>
+    <div class="card-trend down">↓ 83% vs prev month</div>
   </div>
 </div>
   
@@ -194,25 +194,25 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
             stroke="#f59e0b" stroke-width="2.5" fill="none"
             stroke-dasharray="8 4" stroke-dashoffset="0"
             opacity="1"
-            style="animation:dash-flow 2.6s linear infinite"/>
+            style="animation:dash-flow 2.5s linear infinite"/>
       <!-- Solar → Battery -->
       <path d="M224,54 Q148,96 108,122"
             stroke="#a855f7" stroke-width="2" fill="none"
             stroke-dasharray="6 4" stroke-dashoffset="0"
             opacity="1"
-            style="animation:dash-flow 2.5s linear infinite"/>
+            style="animation:dash-flow 2.3s linear infinite"/>
       <!-- Battery → Home -->
       <path d="M108,150 L222,150"
             stroke="#a855f7" stroke-width="2.5" fill="none"
             stroke-dasharray="8 4" stroke-dashoffset="0"
             opacity="1"
-            style="animation:dash-flow 2.6s linear infinite"/>
+            style="animation:dash-flow 2.4s linear infinite"/>
       <!-- Grid → Home -->
       <path d="M392,150 L278,150"
             stroke="#3b82f6" stroke-width="2.5" fill="none"
             stroke-dasharray="8 4" stroke-dashoffset="0"
             opacity="1"
-            style="animation:dash-flow 2.5s linear infinite"/>
+            style="animation:dash-flow 2.2s linear infinite"/>
       <!-- Solar → Grid (export) -->
       <path d="M276,54 Q372,96 392,122"
             stroke="#00d4aa" stroke-width="2" fill="none"
@@ -226,7 +226,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
         <text text-anchor="middle" y="-4" fill="#f59e0b" font-size="10" font-weight="700"
               font-family="'Inter',system-ui,sans-serif" letter-spacing="0.5">SOLAR</text>
         <text text-anchor="middle" y="8" fill="#f59e0b" font-size="9"
-              font-family="'Inter',system-ui,sans-serif">239 kWh</text>
+              font-family="'Inter',system-ui,sans-serif">324 kWh</text>
         <text text-anchor="middle" y="46" fill="#f59e0b" font-size="9"
               font-family="'Inter',system-ui,sans-serif" opacity="0.6">generated</text>
       </g>
@@ -236,7 +236,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
         <text text-anchor="middle" y="-4" fill="#a855f7" font-size="10" font-weight="700"
               font-family="'Inter',system-ui,sans-serif" letter-spacing="0.5">BATT</text>
         <text text-anchor="middle" y="8" fill="#a855f7" font-size="9"
-              font-family="'Inter',system-ui,sans-serif">135 kWh</text>
+              font-family="'Inter',system-ui,sans-serif">184 kWh</text>
         <text text-anchor="middle" y="46" fill="#a855f7" font-size="9"
               font-family="'Inter',system-ui,sans-serif" opacity="0.6">discharged</text>
       </g>
@@ -246,7 +246,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
         <text text-anchor="middle" y="-4" fill="#00d4aa" font-size="10" font-weight="700"
               font-family="'Inter',system-ui,sans-serif" letter-spacing="0.5">HOME</text>
         <text text-anchor="middle" y="8" fill="#00d4aa" font-size="9"
-              font-family="'Inter',system-ui,sans-serif">326 kWh</text>
+              font-family="'Inter',system-ui,sans-serif">476 kWh</text>
         <text text-anchor="middle" y="46" fill="#00d4aa" font-size="9"
               font-family="'Inter',system-ui,sans-serif" opacity="0.6">consumed</text>
       </g>
@@ -256,25 +256,25 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
         <text text-anchor="middle" y="-4" fill="#3b82f6" font-size="10" font-weight="700"
               font-family="'Inter',system-ui,sans-serif" letter-spacing="0.5">GRID</text>
         <text text-anchor="middle" y="8" fill="#3b82f6" font-size="9"
-              font-family="'Inter',system-ui,sans-serif">147 kWh in</text>
+              font-family="'Inter',system-ui,sans-serif">239 kWh in</text>
         <text text-anchor="middle" y="46" fill="#00d4aa" font-size="9"
-              font-family="'Inter',system-ui,sans-serif">53 kWh out</text>
+              font-family="'Inter',system-ui,sans-serif">73 kWh out</text>
       </g>
     </svg>
   </div>
 </div>
   
-<p class="section-title">This Month So Far — 2026-05 (day 13 of 31)</p>
+<p class="section-title">This Month So Far — 2026-05 (day 15 of 31)</p>
 <div class="cards">
   <div class="card yellow">
     <div class="card-label">Solar So Far</div>
-    <div class="card-value">239</div>
-    <div class="card-sub">kWh · on track for 570 kWh · last yr 783 kWh</div>
+    <div class="card-value">324</div>
+    <div class="card-sub">kWh · on track for 669 kWh · last yr 783 kWh</div>
   </div>
   <div class="card red">
     <div class="card-label">Grid Import So Far</div>
-    <div class="card-value">147</div>
-    <div class="card-sub">kWh · projecting 350 kWh total</div>
+    <div class="card-value">239</div>
+    <div class="card-sub">kWh · projecting 494 kWh total</div>
   </div>
   <div class="card green">
     <div class="card-label">Grid Spend So Far</div>
@@ -283,12 +283,12 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
 </div>
   
-<p class="section-title">Latest EV Charge — 06 May 2026</p>
+<p class="section-title">Latest EV Charge — 13 May 2026</p>
 <div class="cards">
   <div class="card blue">
     <div class="card-label">Energy Added</div>
-    <div class="card-value">35.8 kWh</div>
-    <div class="card-sub">Volvo XC40 · 107 miles range added</div>
+    <div class="card-value">29.9 kWh</div>
+    <div class="card-sub">Volvo XC40 · 90 miles range added</div>
   </div>
   <div class="card green">
     <div class="card-label">Cost per Mile</div>
@@ -302,8 +302,8 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
   <div class="card purple">
     <div class="card-label">This Month</div>
-    <div class="card-value">1 charges</div>
-    <div class="card-sub">36 kWh · £2.38</div>
+    <div class="card-value">2 charges</div>
+    <div class="card-sub">66 kWh · £4.38</div>
   </div>
 </div>
 <div class="panel">
@@ -314,6 +314,13 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
         <th>Date</th><th>Car</th><th>kWh</th><th>Cost</th><th>Miles</th><th>p/mile</th>
       </tr></thead>
       <tbody><tr>
+  <td>13 May</td>
+  <td style="color:var(--purple)">XC40</td>
+  <td class="num">29.9</td>
+  <td class="num">£2.00</td>
+  <td class="num">90</td>
+  <td class="num pos">2.2p</td>
+</tr><tr>
   <td>06 May</td>
   <td style="color:var(--purple)">XC40</td>
   <td class="num">35.8</td>
@@ -341,13 +348,6 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <td class="num">£2.15</td>
   <td class="num">97</td>
   <td class="num pos">2.2p</td>
-</tr><tr>
-  <td>16 Apr</td>
-  <td style="color:var(--purple)">XC40</td>
-  <td class="num">0.3</td>
-  <td class="num">£0.10</td>
-  <td class="num">1</td>
-  <td class="num pos">9.4p</td>
 </tr></tbody>
     </table>
   </div>
@@ -373,7 +373,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <div class="card green">
     <div class="card-label">CO₂ Avoided — Solar</div>
     <div class="card-value">2.1t</div>
-    <div class="card-sub">8,930 kWh × 233g/kWh UK grid</div>
+    <div class="card-sub">9,015 kWh × 233g/kWh UK grid</div>
   </div>
   <div class="card green">
     <div class="card-label">Equivalent Trees</div>
@@ -382,7 +382,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
   <div class="card teal">
     <div class="card-label">EV Miles Driven</div>
-    <div class="card-value">18,590</div>
+    <div class="card-value">18,679</div>
     <div class="card-sub">i3 @4 mi/kWh · XC40 @3 mi/kWh</div>
   </div>
   <div class="card teal">
@@ -489,18 +489,18 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <td class="num">79%</td>
 </tr><tr>
   <td>2026-05</td>
-  <td class="num">238.9</td>
-  <td class="num">146.9</td>
-  <td class="num">52.6</td>
-  <td class="num">142.1</td>
-  <td class="num">134.7</td>
-  <td class="num">79%</td>
+  <td class="num">323.9</td>
+  <td class="num">239.0</td>
+  <td class="num">73.0</td>
+  <td class="num">198.6</td>
+  <td class="num">184.3</td>
+  <td class="num">78%</td>
 </tr></tbody>
       </table>
     </div>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 13 May 2026 at 15:55</footer>
+<footer>Upton Home Energy Hub · Updated 15 May 2026 at 08:10</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
@@ -596,9 +596,9 @@ function mkChart(id,cfg){
   mkChart('ovEnergy',{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Solar Generated',data:[527.1, 635.2, 688.4, 526.8, 231.6, 204.1, 156.0, 92.5, 175.3, 415.9, 690.4, 238.9],backgroundColor:YELLOW+'cc',stack:'a'},
-      {label:'Battery Discharged',data:[198.9, 513.4, 752.5, 661.0, 725.7, 574.9, 629.1, 414.6, 393.1, 519.3, 499.8, 134.7],backgroundColor:PURPLE+'cc',stack:'a'},
-      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 146.9],backgroundColor:RED+'aa',stack:'b'},
+      {label:'Solar Generated',data:[527.1, 635.2, 688.4, 526.8, 231.6, 204.1, 156.0, 92.5, 175.3, 415.9, 690.4, 323.9],backgroundColor:YELLOW+'cc',stack:'a'},
+      {label:'Battery Discharged',data:[198.9, 513.4, 752.5, 661.0, 725.7, 574.9, 629.1, 414.6, 393.1, 519.3, 499.8, 184.3],backgroundColor:PURPLE+'cc',stack:'a'},
+      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 239.0],backgroundColor:RED+'aa',stack:'b'},
     ]},
     options:barOpts(true)
   });
@@ -607,8 +607,8 @@ function mkChart(id,cfg){
   mkChart('ovCost',{
     type:'bar',
     data:{labels:octLabels,datasets:[
-      {label:'Off-Peak Cost',data:[54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 3.55],backgroundColor:TEAL+'cc',stack:'cost'},
-      {label:'On-Peak Cost',data:[66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.26],backgroundColor:ORANGE+'cc',stack:'cost'},
+      {label:'Off-Peak Cost',data:[54.57, 44.21, 38.06, 20.12, 30.91, 49.13, 50.1, 47.78, 27.04, 12.63, 3.6, 7.1],backgroundColor:TEAL+'cc',stack:'cost'},
+      {label:'On-Peak Cost',data:[66.86, 13.81, 10.64, 25.17, 12.0, 6.49, 6.17, 36.94, 14.01, 35.58, 28.47, 0.53],backgroundColor:ORANGE+'cc',stack:'cost'},
     ]},
     options:barOpts(true)
   });
@@ -616,8 +616,8 @@ function mkChart(id,cfg){
   mkChart('ovBalance',{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 146.9],backgroundColor:RED+'aa'},
-      {label:'Grid Export',data:[453.4, 446.2, 767.2, 308.6, 214.6, 203.6, 203.9, 43.7, 3.5, 15.2, 152.1, 52.6],backgroundColor:TEAL+'aa'},
+      {label:'Grid Import',data:[364.8, 502.5, 768.6, 780.0, 1026.7, 1315.9, 1817.1, 1915.7, 1353.3, 1177.7, 845.9, 239.0],backgroundColor:RED+'aa'},
+      {label:'Grid Export',data:[453.4, 446.2, 767.2, 308.6, 214.6, 203.6, 203.9, 43.7, 3.5, 15.2, 152.1, 73.0],backgroundColor:TEAL+'aa'},
     ]},
     options:barOpts(false)
   });

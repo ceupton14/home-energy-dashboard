@@ -163,17 +163,17 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   </div>
   <div class="card teal">
     <div class="card-label">New World Cost (total)</div>
-    <div class="card-value">£2,155.45</div>
+    <div class="card-value">£2,165.67</div>
     <div class="card-sub">Octopus bill − export earnings</div>
   </div>
   <div class="card green">
     <div class="card-label">Total Saved</div>
-    <div class="card-value">£5,919.01</div>
+    <div class="card-value">£5,908.80</div>
     <div class="card-sub">over 23 months · ahead</div>
   </div>
   <div class="card green">
     <div class="card-label">Monthly Average</div>
-    <div class="card-value">£257.35</div>
+    <div class="card-value">£256.90</div>
     <div class="card-sub">best: 2024-07 (£357.54)</div>
   </div>
 </div>
@@ -255,11 +255,11 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
   <td class="num">£170.72 *</td>
   <td class="num">£89.69</td>
   <td class="num"><strong>£352.92</strong></td>
-  <td class="num">£139.60</td>
-  <td class="num">−£22.06</td>
-  <td class="num"><strong>£117.55</strong></td>
-  <td class="num pos"><strong>£235.37</strong></td>
-  <td class="num pos">£5,919.00</td>
+  <td class="num">£155.32</td>
+  <td class="num">−£27.55</td>
+  <td class="num"><strong>£127.77</strong></td>
+  <td class="num pos"><strong>£225.16</strong></td>
+  <td class="num pos">£5,908.79</td>
 </tr><tr>
   <td>2026-04</td>
   <td class="num">£92.51 *</td>
@@ -508,7 +508,7 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
     <p style="color:var(--muted);font-size:.75rem;margin-top:.75rem">* Price estimated from last ONS published value (16 months). Prices refresh automatically each morning.</p>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 27 May 2026 at 11:44</footer>
+<footer>Upton Home Energy Hub · Updated 30 May 2026 at 09:36</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
@@ -606,7 +606,7 @@ function mkChart(id,cfg){
     type:'bar',
     data:{labels,datasets:[
       {label:'Old World (oil+petrol+electricity)',data:[357.54, 349.43, 336.65, 343.78, 341.68, 345.37, 351.24, 349.64, 351.24, 348.78, 349.31, 348.78, 343.95, 343.95, 343.41, 359.2, 358.58, 359.2, 363.1, 361.26, 363.1, 352.35, 352.92],backgroundColor:RED+'bb'},
-      {label:'New World (actual bill−export)',data:[0.0, 0.0, 18.74, 99.38, 185.43, 225.35, 310.66, 200.75, 113.73, 32.84, 0.0, 0.0, 0.0, 0.0, 9.98, 52.53, 10.51, 17.63, 25.52, 391.46, 343.39, 0.0, 117.55],backgroundColor:TEAL+'bb'},
+      {label:'New World (actual bill−export)',data:[0.0, 0.0, 18.74, 99.38, 185.43, 225.35, 310.66, 200.75, 113.73, 32.84, 0.0, 0.0, 0.0, 0.0, 9.98, 52.53, 10.51, 17.63, 25.52, 391.46, 343.39, 0.0, 127.77],backgroundColor:TEAL+'bb'},
     ]},
     options:barOpts(false)
   });
@@ -614,8 +614,8 @@ function mkChart(id,cfg){
   new Chart(document.getElementById('savCumul'),{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Monthly Saving',data:[357.54, 349.43, 317.91, 244.41, 156.25, 120.02, 40.57, 148.89, 237.5, 315.94, 349.31, 348.78, 343.95, 343.95, 333.44, 306.67, 348.07, 341.56, 337.59, -30.21, 19.72, 352.35, 235.37],backgroundColor:GREEN+'55',yAxisID:'y'},
-      {label:'Cumulative Saving',data:[357.54, 706.97, 1024.88, 1269.28, 1425.53, 1545.55, 1586.13, 1735.01, 1972.52, 2288.46, 2637.77, 2986.55, 3330.5, 3674.44, 4007.88, 4314.54, 4662.62, 5004.18, 5341.77, 5311.56, 5331.28, 5683.63, 5919.0],type:'line',borderColor:GREEN,
+      {label:'Monthly Saving',data:[357.54, 349.43, 317.91, 244.41, 156.25, 120.02, 40.57, 148.89, 237.5, 315.94, 349.31, 348.78, 343.95, 343.95, 333.44, 306.67, 348.07, 341.56, 337.59, -30.21, 19.72, 352.35, 225.16],backgroundColor:GREEN+'55',yAxisID:'y'},
+      {label:'Cumulative Saving',data:[357.54, 706.97, 1024.88, 1269.28, 1425.53, 1545.55, 1586.13, 1735.01, 1972.52, 2288.46, 2637.77, 2986.55, 3330.5, 3674.44, 4007.88, 4314.54, 4662.62, 5004.18, 5341.77, 5311.56, 5331.28, 5683.63, 5908.79],type:'line',borderColor:GREEN,
        backgroundColor:GREEN+'22',fill:false,tension:.3,pointRadius:3,yAxisID:'y1'},
     ]},
     options:{responsive:true,maintainAspectRatio:false,

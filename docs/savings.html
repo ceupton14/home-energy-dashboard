@@ -158,22 +158,22 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 <div class="cards">
   <div class="card red">
     <div class="card-label">Old World Cost (total)</div>
-    <div class="card-value">£8,074.46</div>
+    <div class="card-value">£8,426.81</div>
     <div class="card-sub">oil + petrol + standard electricity</div>
   </div>
   <div class="card teal">
     <div class="card-label">New World Cost (total)</div>
-    <div class="card-value">£2,165.67</div>
+    <div class="card-value">£2,189.14</div>
     <div class="card-sub">Octopus bill − export earnings</div>
   </div>
   <div class="card green">
     <div class="card-label">Total Saved</div>
-    <div class="card-value">£5,908.80</div>
-    <div class="card-sub">over 23 months · ahead</div>
+    <div class="card-value">£6,237.68</div>
+    <div class="card-sub">over 24 months · ahead</div>
   </div>
   <div class="card green">
     <div class="card-label">Monthly Average</div>
-    <div class="card-value">£256.90</div>
+    <div class="card-value">£259.90</div>
     <div class="card-sub">best: 2024-07 (£357.54)</div>
   </div>
 </div>
@@ -250,16 +250,27 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
           <th>Saving</th><th>Cumulative</th>
         </tr></thead>
         <tbody><tr>
+  <td>2026-06</td>
+  <td class="num">£92.51 *</td>
+  <td class="num">£170.72 *</td>
+  <td class="num">£89.12</td>
+  <td class="num"><strong>£352.35</strong></td>
+  <td class="num">£2.85</td>
+  <td class="num">−£43.60</td>
+  <td class="num"><strong>£0.00</strong></td>
+  <td class="num pos"><strong>£352.35</strong></td>
+  <td class="num pos">£6,237.67</td>
+</tr><tr>
   <td>2026-05</td>
   <td class="num">£92.51 *</td>
   <td class="num">£170.72 *</td>
   <td class="num">£89.69</td>
   <td class="num"><strong>£352.92</strong></td>
-  <td class="num">£155.32</td>
-  <td class="num">−£27.55</td>
-  <td class="num"><strong>£127.77</strong></td>
-  <td class="num pos"><strong>£225.16</strong></td>
-  <td class="num pos">£5,908.79</td>
+  <td class="num">£180.83</td>
+  <td class="num">−£29.59</td>
+  <td class="num"><strong>£151.24</strong></td>
+  <td class="num pos"><strong>£201.69</strong></td>
+  <td class="num pos">£5,885.32</td>
 </tr><tr>
   <td>2026-04</td>
   <td class="num">£92.51 *</td>
@@ -505,10 +516,10 @@ footer{text-align:center;color:var(--muted);font-size:.75rem;
 </tr></tbody>
       </table>
     </div>
-    <p style="color:var(--muted);font-size:.75rem;margin-top:.75rem">* Price estimated from last ONS published value (16 months). Prices refresh automatically each morning.</p>
+    <p style="color:var(--muted);font-size:.75rem;margin-top:.75rem">* Price estimated from last ONS published value (17 months). Prices refresh automatically each morning.</p>
   </div>
 </div>
-<footer>Upton Home Energy Hub · Updated 5 Jun 2026 at 10:56</footer>
+<footer>Upton Home Energy Hub · Updated 1 Jul 2026 at 08:27</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 
 <script>
@@ -600,13 +611,13 @@ function mkChart(id,cfg){
 
 <script>
 (function(){
-  const labels=["Jul '24", "Aug '24", "Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26"];
+  const labels=["Jul '24", "Aug '24", "Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25", "Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26", "Jun '26"];
 
   new Chart(document.getElementById('savCompare'),{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Old World (oil+petrol+electricity)',data:[357.54, 349.43, 336.65, 343.78, 341.68, 345.37, 351.24, 349.64, 351.24, 348.78, 349.31, 348.78, 343.95, 343.95, 343.41, 359.2, 358.58, 359.2, 363.1, 361.26, 363.1, 352.35, 352.92],backgroundColor:RED+'bb'},
-      {label:'New World (actual bill−export)',data:[0.0, 0.0, 18.74, 99.38, 185.43, 225.35, 310.66, 200.75, 113.73, 32.84, 0.0, 0.0, 0.0, 0.0, 9.98, 52.53, 10.51, 17.63, 25.52, 391.46, 343.39, 0.0, 127.77],backgroundColor:TEAL+'bb'},
+      {label:'Old World (oil+petrol+electricity)',data:[357.54, 349.43, 336.65, 343.78, 341.68, 345.37, 351.24, 349.64, 351.24, 348.78, 349.31, 348.78, 343.95, 343.95, 343.41, 359.2, 358.58, 359.2, 363.1, 361.26, 363.1, 352.35, 352.92, 352.35],backgroundColor:RED+'bb'},
+      {label:'New World (actual bill−export)',data:[0.0, 0.0, 18.74, 99.38, 185.43, 225.35, 310.66, 200.75, 113.73, 32.84, 0.0, 0.0, 0.0, 0.0, 9.98, 52.53, 10.51, 17.63, 25.52, 391.46, 343.39, 0.0, 151.24, 0.0],backgroundColor:TEAL+'bb'},
     ]},
     options:barOpts(false)
   });
@@ -614,8 +625,8 @@ function mkChart(id,cfg){
   new Chart(document.getElementById('savCumul'),{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Monthly Saving',data:[357.54, 349.43, 317.91, 244.41, 156.25, 120.02, 40.57, 148.89, 237.5, 315.94, 349.31, 348.78, 343.95, 343.95, 333.44, 306.67, 348.07, 341.56, 337.59, -30.21, 19.72, 352.35, 225.16],backgroundColor:GREEN+'55',yAxisID:'y'},
-      {label:'Cumulative Saving',data:[357.54, 706.97, 1024.88, 1269.28, 1425.53, 1545.55, 1586.13, 1735.01, 1972.52, 2288.46, 2637.77, 2986.55, 3330.5, 3674.44, 4007.88, 4314.54, 4662.62, 5004.18, 5341.77, 5311.56, 5331.28, 5683.63, 5908.79],type:'line',borderColor:GREEN,
+      {label:'Monthly Saving',data:[357.54, 349.43, 317.91, 244.41, 156.25, 120.02, 40.57, 148.89, 237.5, 315.94, 349.31, 348.78, 343.95, 343.95, 333.44, 306.67, 348.07, 341.56, 337.59, -30.21, 19.72, 352.35, 201.69, 352.35],backgroundColor:GREEN+'55',yAxisID:'y'},
+      {label:'Cumulative Saving',data:[357.54, 706.97, 1024.88, 1269.28, 1425.53, 1545.55, 1586.13, 1735.01, 1972.52, 2288.46, 2637.77, 2986.55, 3330.5, 3674.44, 4007.88, 4314.54, 4662.62, 5004.18, 5341.77, 5311.56, 5331.28, 5683.63, 5885.32, 6237.67],type:'line',borderColor:GREEN,
        backgroundColor:GREEN+'22',fill:false,tension:.3,pointRadius:3,yAxisID:'y1'},
     ]},
     options:{responsive:true,maintainAspectRatio:false,
@@ -635,9 +646,9 @@ function mkChart(id,cfg){
   new Chart(document.getElementById('savBreak'),{
     type:'bar',
     data:{labels,datasets:[
-      {label:'Oil (heating)',data:[93.77, 86.9, 83.46, 86.23, 83.5, 85.32, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51],backgroundColor:ORANGE+'cc',stack:'old'},
-      {label:'Petrol (driving)',data:[179.45, 178.2, 169.48, 166.99, 168.23, 169.48, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72],backgroundColor:RED+'cc',stack:'old'},
-      {label:'Electricity (standard tariff)',data:[84.33, 84.33, 83.71, 90.57, 89.95, 90.57, 88.0, 86.4, 88.0, 85.54, 86.08, 85.54, 80.71, 80.71, 80.18, 95.96, 95.35, 95.96, 99.87, 98.02, 99.87, 89.12, 89.69],backgroundColor:YELLOW+'99',stack:'old'},
+      {label:'Oil (heating)',data:[93.77, 86.9, 83.46, 86.23, 83.5, 85.32, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51, 92.51],backgroundColor:ORANGE+'cc',stack:'old'},
+      {label:'Petrol (driving)',data:[179.45, 178.2, 169.48, 166.99, 168.23, 169.48, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72, 170.72],backgroundColor:RED+'cc',stack:'old'},
+      {label:'Electricity (standard tariff)',data:[84.33, 84.33, 83.71, 90.57, 89.95, 90.57, 88.0, 86.4, 88.0, 85.54, 86.08, 85.54, 80.71, 80.71, 80.18, 95.96, 95.35, 95.96, 99.87, 98.02, 99.87, 89.12, 89.69, 89.12],backgroundColor:YELLOW+'99',stack:'old'},
     ]},
     options:barOpts(true)
   });
